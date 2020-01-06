@@ -1,0 +1,606 @@
+$main-font: "Comfortaa";
+$main-color: #8e49f9;
+$text-color: #3a3a3a;
+$header-color: #282331;
+
+@mixin background-properties {
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+}
+@mixin main-hover {
+    background-color: $main-color;
+    color: white ;
+}
+@mixin circle-animation {
+    border-radius: 50px;
+    background-color: $main-color;
+    animation-name: myanimation;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    position: absolute;
+}
+@mixin order-inputs{
+border: 2px solid black;
+border-radius: 10px;
+padding: 5px 10px;
+font-size: 18px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+select:focus{
+    outline: none;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+*{
+    font-family: $main-font;
+    color: $header-color;
+}
+
+.index-page{
+    height: 100%;
+    margin: 0px !important;
+background-color: #dfccfe;
+text-align: center;
+line-height: 2rem;
+
+h1.index-heading {
+    color: #8d4fe9;
+    padding-top: 50px;
+}
+
+ .index-list{
+    list-style: none;;
+    text-align: center;
+ }
+
+a{
+  color: #3a3a3a;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 5rem;  
+}
+a:hover{
+    border-bottom: 3px solid #8d4fe9;
+}
+}
+
+.container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.container-fluid{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.avirdigital-navbar{
+    li{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+  
+    a {
+        color: $text-color;
+        &.active{
+            color: #8e49f9;
+        }
+        &:hover{
+           @include main-hover(); 
+        }
+    }
+
+   
+}
+
+.services-banner{
+@include background-properties();
+background-image: url("../pics/Background.png");
+height: 900px;
+width: 100%;
+}
+
+.services-banner--text{
+    padding-top: 300px;
+    max-width: 900px;
+
+    & p{
+        padding-top: 40px;
+        color: $text-color;
+    }
+}
+
+
+.services-services{
+    .row{
+        margin-top: 30px;
+    }
+    .services-firstcol{
+        font-size: 40px;
+        margin-top: 40px;
+        padding-left: 20px;
+    }
+    .card{
+        color: $text-color;
+        border-radius: 10px;
+        text-align: justify;
+        padding: 32px;
+        background: url("../pics/card-background.png") no-repeat;
+
+        .card-title{
+            color: $header-color;
+            margin-top: 50px;
+            font-weight: bold;
+
+        }
+        i{
+            font-size: 50px;
+            background-color: $main-color;
+            border: 5px solid $main-color;
+            width: 50px;
+            height: 50px;
+            border-radius: 6px;
+            color: white;
+        }
+        ul{
+            padding-left: 0px !important;
+            li{
+                list-style: none;
+                &::before{
+                    content: "\f055 ";
+                    font-family: "FontAwesome";
+                    color: $main-color;
+                }
+                & a{
+                    color: $text-color;
+                }
+            }
+        }
+        
+    }
+}
+
+.avirdigital-footer{
+    background-color: #faf8ff;
+    min-height: 500px;
+    margin-top: 80px;
+
+    .row{
+        
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .footer-col-1{
+            .avirdigital-logo{
+                padding-bottom: 30px;
+            }
+            label{
+                font-weight: bold;
+            }
+            select{
+                background-color: transparent;
+                border: unset;
+                color: orange;
+            }
+
+            ul{
+                padding-left: 0px !important;
+                padding-bottom: 20px;
+                li{
+                    display: inline;
+                    padding: 3px;
+
+                    a{
+                        color: #737a9a;
+                    }
+                    i{
+                        background-color: white;
+                        color: $main-color;
+                        border: 1px solid white;
+                        border-radius: 20px;
+                        padding: 8px 9px;
+                    }
+                    i:hover{
+                        @include main-hover();
+                    }
+                    
+                }
+            }
+        }
+
+        h4{
+            padding-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .footer-col-2{
+            ul{
+                padding-left: 0px !important;
+            }
+            li{
+                list-style: none;
+                padding-bottom: 10px;
+                a{
+                    color: #737a9a;
+                    
+                }
+            }
+        }
+
+        .footer-col-3{
+            p{
+                color: #737a9a;
+            }
+            
+        }
+
+        .footer-col-4{
+            p{
+                color: #737a9a;
+            }
+
+            input{
+                border: unset;
+                height: 50px;
+                width: 100%;padding: 9px 15px;
+            }
+            
+        }
+    }
+    p.footer-footertext{
+        text-align: center;
+        color: #737a9a;
+        font-size: 15px;
+    }
+
+}
+
+.mycircle{
+    @include circle-animation();
+    margin-left: -40px;
+    margin-top: 130px;
+}
+
+@keyframes myanimation{
+    0% {width: 70px; height: 70px}
+    100% {width: 100px; height: 100px; border-radius: 70px}
+}
+.mycircle2{
+    @include circle-animation();
+    background-color: #af9dcf;
+    animation-name: myanimation2;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+@keyframes myanimation2{
+    0% {width: 70px; height: 70px}
+    100% {width: 100px; height: 100px; border-radius: 70px}
+}
+
+.mycircle3{
+    @include circle-animation();
+    background-color: #8d4fe9;
+    animation-name: myanimation3;
+    margin-left: 140px;
+
+}
+
+@keyframes myanimation3{
+    0% {width: 20px; height: 20px}
+    100% {width: 40px; height: 40px; border-radius: 70px}
+}
+
+@media only screen and (max-width: 1000px) {
+    .services-services .card  {
+      background-size: cover !important;
+      margin-top: 30px;
+    }
+
+    .services-banner {
+        height: 700px !important;
+    }
+  }
+
+.option{
+    border: unset !important;
+    background-color: transparent !important;
+}
+
+.services-2_text {
+   h6{
+       font-size: 24px;
+       font-weight: bold;
+       margin-bottom: 50px;
+   }
+
+   h5{
+       font-size: 35px;
+       margin-bottom: 40px;
+       font-weight: bold;
+   }
+
+   p{
+       font-size: 18px;
+       margin-bottom: 30px;
+   }
+}
+
+.services-2_animated-circles{
+    height: 540px;
+    background-color: #f8f9ff;
+    margin-bottom: 50px;
+    .circle1{
+        @include circle-animation();
+        margin-left: 100px;
+        margin-top: 100px;
+        background-color: #ffebf4;
+    }
+    .circle2{
+        @include circle-animation();
+        margin-left: 900px;
+        margin-top: 400px;
+        background-color: #ffebf4;
+        animation-name: myanimation2;
+    }
+    @keyframes myanimation2{
+        0% {width: 70px; height: 70px}
+        100% {width: 100px; height: 100px; border-radius: 70px}
+    }
+
+   img.ellipse1{
+        animation-name: myanimation3;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        margin-top: 400px;
+        margin-left: 150px;
+    }
+    @keyframes myanimation3
+    {
+        0%
+        {
+            transform: translatex(0px) translatey(0px)
+        }
+        50%
+        {
+            transform: translatex(400px) translatey(-400px);
+        }
+        }
+
+        img.ellipse2{
+            animation-name: myanimation4;
+            animation-duration:15s;
+            animation-iteration-count: infinite;
+            margin-top: 400px;
+            margin-left: 400px;
+        }
+        @keyframes myanimation4
+        {
+            0%
+            {
+                transform: translatex(0px) translatey(0px)
+            }
+            50%
+            {
+                transform: translatex(0px) translatey(-400px);
+            }
+            }
+        
+            img.ellipse3{
+                margin-top: -400px;
+                margin-left: 850px;
+                animation-name: myanimation5;
+                animation-duration:15s;
+                animation-iteration-count: infinite;
+            }
+
+    @keyframes myanimation5{
+        0%
+        {
+            transform: translatex(0px) translatey(0px)
+        }
+        50%
+        {
+            transform: translatex(-500px) translatey(0px);
+        }
+        }
+
+    }
+    .services-2_left-text{
+        padding: 21px;
+        background-color: $main-color;
+        width: 40%;
+        border-top-right-radius: 30px;
+        margin-bottom: 50px;
+        font-size: 22px;
+        margin-top: -80px;
+
+        span{
+            color: white;
+        }
+    }
+  
+    @media only screen and (max-width: 1200px){
+        .services-2_animated-circles{
+           display: none;
+        }
+        .services-2_left-text{
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .services-2_cards
+    {
+        .col-sm-12{
+            margin-bottom: 40px;
+        }
+        .card-body {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            border: unset;
+        }
+        i{
+            font-size: 30px;
+            color: $main-color;
+            border: 4px solid  white;
+            border-radius: 10px;
+            padding: 7px 11px;
+            box-shadow: 0px 20px 12px 0px #dfccfe;
+        }
+
+        p{
+            margin-top: 40px;
+        }
+
+        h5{
+            margin-top: 10px;
+        }
+
+        .card-rest{
+            margin-left: 30px;
+            padding-right: 80px;
+            text-align: justify;
+        }
+    }
+
+    .services-2_order{
+        h4{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .order-heading{
+            margin-top: 70px;
+            margin-bottom: 70px;
+            text-align: center;
+            h5{
+                font-weight: bold;
+            }
+            p{
+                color: $main-color;
+            }
+        }
+        .order-first{
+            margin-bottom: 40px;
+          
+            .col-md-12{
+                margin: 10px auto;
+            }
+     
+            
+            
+            input{
+                @include order-inputs();
+                width: 100%;
+                }
+            }
+        
+  .order-second_inputs{ 
+      margin-bottom: 40px;
+      textarea {
+          margin-top: 20px;
+          width: 100%;
+          @include order-inputs();
+      }
+    .order-second_inputs1{
+        .col-md-12{
+            margin: 10px auto;
+        }
+        input{
+            width: 100%;
+            @include order-inputs();
+        }
+    }
+  }
+  
+  .order-third{
+      .order-third_ordertype{
+          margin-bottom: 30px;
+          .line1{
+            font-size: 18px;
+             
+              label{
+                  margin-left: 4px;
+              }
+          }
+          .line2{
+            font-size: 18px;
+           
+            label{
+                margin-left: 4px;
+            }
+          }
+      }
+  }
+  .order-third_ordermaterial{
+     margin-bottom: 30px;
+     font-size: 18px;
+     p{
+         font-weight: bold;
+     }
+     .order-third_ordermaterial-inputs{
+         display: flex;
+         justify-content: space-between;
+     }
+     
+     label{
+         margin-left: 4px;
+     }  textarea{
+      width: 100%;
+      margin: 10px auto;
+      @include order-inputs();
+  }
+  }
+  .order-third_yesnoquestions{
+      margin-bottom: 30px;
+      p{
+          margin-top: 10px;
+          font-size: 18px;
+          font-weight: bold;
+      }
+
+      .yesorno-inputs{
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        label{
+            margin-left: 4px;
+        }
+        
+      }
+      textarea{
+        @include order-inputs();
+        width: 100%;
+        margin-top: 10px;
+        padding: 8px;
+    }
+  }
+
+   .order-third_send{
+       margin: 50px auto;
+       text-align: center;
+       input{
+           border: 2px solid black;
+           border-radius: 0px 9px;
+           padding: 15px;
+           background: transparent;
+           font-weight: bold;
+       }
+   }     
+     }
+ 
